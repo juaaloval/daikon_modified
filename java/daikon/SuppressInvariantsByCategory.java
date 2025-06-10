@@ -27,8 +27,8 @@ public class SuppressInvariantsByCategory {
         List<String> invariantsToSuppress = new ArrayList<>();
 
         // Read invariants taxonomy
-//        String filePath = "daikon/config/taxonomy.json";
-        String filePath = "utils/taxonomy.json";
+        String filePath = "java/daikon/config/taxonomy.json";
+//        String filePath = "utils/taxonomy.json";
         JSONObject jsonObject = readJsonObject(filePath);
         if(suppress_arithmetic_comparisons) {
             invariantsToSuppress.addAll(getInvariantsFromCategory(jsonObject, "arithmetic_comparisons"));

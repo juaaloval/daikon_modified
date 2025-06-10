@@ -649,11 +649,12 @@ public final class Daikon {
       argsList = Arrays.asList(args);
       readParameterValues();
 
-//      String configFile = use_modified_daikon_version ? "--config=daikon/config/config_oracleGeneration.txt" : "--config=daikon/config/config_original.txt";
-      String configFile = use_modified_daikon_version ? "--config=utils/config_oracleGeneration.txt" : "--config=utils/config_original.txt";
+      String configFile = use_modified_daikon_version ? "--config=java/daikon/config/config_oracleGeneration.txt" : "--config=java/daikon/config/config_original.txt";
+//      String configFile = use_modified_daikon_version ? "--config=utils/config_oracleGeneration.txt" : "--config=utils/config_original.txt";
 
       if (use_only_unary_invariants) {
-        configFile = "--config=utils/config_oracleGeneration_unary.txt";
+        configFile = "--config=java/daikon/config/config_oracleGeneration_unary.txt";
+//        configFile = "--config=utils/config_oracleGeneration_unary.txt";
       }
 
       String[] files = {
