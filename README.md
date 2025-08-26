@@ -24,7 +24,7 @@ expected API behaviour and is considered a false positive. Finding counterexampl
 positives is extremely unlikely, and the number of reported false positives can become unbearable if the API has several 
 numerical response fields.
 
-To address this, AGORA integrates a novel heuristic to minimize false positives derived from arithmetic comparisons 
+To address this, AGORA+ integrates a novel heuristic to minimize false positives derived from arithmetic comparisons 
 based on the following observation: parameters with a different value range are unlikely to be related. In the previous 
 example, for instance, the duration of a song in milliseconds may oscillate in the order of thousands, whereas the 
 number of artists of a song may vary from 1 to around 10. 
@@ -221,7 +221,7 @@ allowing to detect invariants such as `input.limit >= size(return.items)`.
 
 However, there are derived variables that do not provide any relevant information, this is the case of the derived variable 
 `orig()`, which indicates the value of a variable at the input program point and is used to make comparisons with 
-the value of the same variable at the output program point. In the context of black box testing of RESTful APIs, the value 
+the value of the same variable at the output program point. In the context of black box testing of REST APIs, the value 
 of the input parameters does not change at any time, so Daikon would only detect equality invariants between the parameter 
 value at the input and output (`input.limit == orig(input.limit)`) that will always be satisfied. 
 For this reason, this derived variable has been disabled.
@@ -246,3 +246,4 @@ Section [5.5 Invariant list](https://plse.cs.washington.edu/daikon/download/doc/
 1. **daikon.inv.binary.twoSequence.PairwiseStringGreaterThan**
 1. **daikon.inv.binary.twoSequence.PairwiseStringLessEqual**
 1. **daikon.inv.binary.twoSequence.PairwiseStringGreaterEqual**
+
